@@ -1,5 +1,5 @@
 class EricWeixin::Cms::BaseController < EricWeixin::ApplicationController
-  before_filter :need_login
+  # before_filter :need_login
   around_filter :round
 
   def round
