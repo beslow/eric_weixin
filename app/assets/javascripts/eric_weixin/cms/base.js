@@ -17,7 +17,4 @@
 //= require_tree .
 
 
-$(function(){
-    //$(document).foundation();
-    $(document).foundation('reveal', {animation: false});
-});
+$(function(){ $(document).foundation(); });

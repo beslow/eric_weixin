@@ -1,6 +1,6 @@
 require "pp"
 module EricWeixin
-  class Wz::WeixinController < ApplicationController
+  class Wz::WeixinController < BaseController
     # 第一次接入时，用于微信服务器验证开者服务器的真实性。
     protect_from_forgery except: :reply
     def index

@@ -24,6 +24,29 @@ module EricWeixin::Pay
     nil
   end
 
+  def self.generate_prepay_id_and_code_url options
+    required_field = %i(appid mch_id product_id attach body out_trade_no total_fee spbill_create_ip notify_url trade_type)
+    query_options = {}
+    required_field.each do |p|
+      query_options[p] = options[p]
+    end
+    query_options[:nonce_str] = SecureRandom.uuid.tr('-', '')
+    public_account = ::EricWeixin::PublicAccount.find_by_weixin_app_id(options[:appid])
+
+    sign = generate_sign query_options, public_account.mch_key
+    last_query_options = query_options
+    last_query_options[:sign] = sign
+    pay_load = "<xml>#{last_query_options.map { |k, v| "<#{k.to_s}>#{v.to_s}</#{k.to_s}>" }.join}</xml>"
+    require 'rest-client'
+
+    response = RestClient.post 'https://api.mch.weixin.qq.com/pay/unifiedorder', pay_load
+    pp "**********************下单结果 *********************************"
+    pp response.force_encoding("UTF-8")
+    result = Hash.from_xml(response.force_encoding("UTF-8"))
+    return result['xml']['prepay_id'], result['xml']['code_url'] if result['xml']['return_code'] == 'SUCCESS'
+    nil
+  end
+
   # 产生签名
   def self.generate_sign options, api_key
     pp "**************** 签名参数 *********************"
@@ -116,6 +139,39 @@ module EricWeixin::Pay
     pp response.force_encoding("UTF-8")
     result = Hash.from_xml(response.force_encoding("UTF-8"))
     result['xml']
+  end
+
+
+  # https://api.mch.weixin.qq.com/pay/orderquery
+  # <xml>
+  #    <appid>wx2421b1c4370ec43b</appid>
+  #    <mch_id>10000100</mch_id>
+  #    <nonce_str>ec2316275641faa3aacf3cc599e8730f</nonce_str>
+  #    <out_trade_no>1008450740201411110005820873</out_trade_no>
+  #    <sign>FDD167FAA73459FD921B144BAF4F4CA2</sign>
+  # </xml>
+  def self.order_query options
+    BusinessException.raise '请提供商户订单号。' if options[:out_trade_no].blank?
+    BusinessException.raise '请提供商户号。' if options[:mch_id].blank?
+    BusinessException.raise '请提供公众账号ID。' if options[:appid].blank?
+    BusinessException.raise '请提供mch_key。' if options[:mch_key].blank?
+    options[:nonce_str] = SecureRandom.uuid.tr('-', '')
+
+    api_key = options[:mch_key]
+    options.delete(:mch_key)
+    sign = generate_sign options, api_key
+    options[:sign] = sign
+
+    pay_load = "<xml>#{options.map { |k, v| "<#{k.to_s}>#{v.to_s}</#{k.to_s}>" }.join}</xml>"
+
+    require 'rest-client'
+    response = RestClient.post 'https://api.mch.weixin.qq.com/pay/orderquery', pay_load
+
+    pp "******************************** 微信支付订单的查询  *********************************"
+    pp response.force_encoding("UTF-8")
+    result = Hash.from_xml(response.force_encoding("UTF-8"))
+    result['xml']
+
   end
 
 end

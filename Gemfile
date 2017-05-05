@@ -1,4 +1,4 @@
-source 'https://rubygems.org'
+source 'https://gems.ruby-china.org/'
 # source 'https://ruby.taobao.org'
 # source 'https://gems.ruby-china.org'
 
@@ -20,7 +20,7 @@ gem 'rails', '>= 4.1.4'
 gem "multi_xml"
 gem 'nokogiri'
 gem 'rest-client', '1.8.0'
-gem 'foundation-rails', '5.4.3'
+gem 'foundation-rails', '~> 6.3', '>= 6.3.1.0'
 gem 'will_paginate', '~> 3.0'
 gem 'jquery-rails'
 gem 'eric_tools', '~> 0.0.7'

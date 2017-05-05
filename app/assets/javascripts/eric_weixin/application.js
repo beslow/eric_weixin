@@ -11,7 +11,6 @@
 // about supported directives.
 //
 //= require_tree .
-//= require foundation
 //= require tinymce-jquery
 
 
