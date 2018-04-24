@@ -23,10 +23,10 @@ Gem::Specification.new do |spec|
   # 后来注释的
   spec.add_dependency 'foundation-rails', '~> 6.3', '>= 6.3.1.0'
   #
-  # spec.add_dependency "jquery-ui-rails", '>= 5.0.5'
+  spec.add_dependency "jquery-ui-rails", '>= 5.0.5'
   spec.add_dependency "rest-client", '1.8.0'
   spec.add_dependency "tinymce-rails", '>= 4.1.3'
-  # spec.add_dependency "will_paginate-foundation", '>= 6.2.0'
+  spec.add_dependency "will_paginate-foundation", '>= 6.2.0'
   # spec.add_dependency 'eric_tools', '>= 0.0.7'
   # spec.add_dependency "exception_notification", '>= 4.0.1'
   # spec.add_dependency "multi_xml", '>= 0.5.5'
