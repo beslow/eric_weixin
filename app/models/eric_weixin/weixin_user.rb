@@ -1,7 +1,7 @@
 class EricWeixin::WeixinUser < ActiveRecord::Base
   SEX = {1 => '男', 2 => '女', 0 => '未知'}
   self.table_name = 'weixin_users'
-  belongs_to :member_info
+  # belongs_to :member_info
   belongs_to :weixin_public_account, :class_name => '::EricWeixin::PublicAccount', :foreign_key => 'weixin_public_account_id'
   has_many :orders, class_name: "::EricWeixin::Xiaodian::Order"
   validates_uniqueness_of :openid, scope: :weixin_public_account_id
