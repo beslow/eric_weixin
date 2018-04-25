@@ -21,7 +21,7 @@ gem "multi_xml"
 gem 'nokogiri'
 gem 'rest-client', '1.8.0'
 gem 'foundation-rails', '~> 6.3', '>= 6.3.1.0'
-gem 'will_paginate', '~> 3.0'
+# gem 'will_paginate', '~> 3.0'
 gem 'jquery-ui-rails'
 gem 'bootstrap-will_paginate','0.0.10'
 gem 'will_paginate-foundation'
