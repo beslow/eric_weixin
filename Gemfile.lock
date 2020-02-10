@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    eric_weixin (0.4.4)
+    weixin (0.4.4)
       foundation-rails (~> 6.3, >= 6.3.1.0)
       jquery-rails (>= 3.1.4)
       jquery-ui-rails (>= 5.0.5)
@@ -171,7 +171,7 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
-  eric_weixin!
+  weixin!
 
 BUNDLED WITH
    1.16.0
