@@ -28,7 +28,10 @@ Gem::Specification.new do |spec|
   spec.add_dependency "rest-client", '1.8.0'
   spec.add_dependency "tinymce-rails", '>= 4.1.3'
   spec.add_dependency "will_paginate-foundation", '>= 6.2.0'
+  spec.add_dependency "daemons", '1.2.3'  # delayed_job 使用的延时进程
+  spec.add_dependency "delayed_job_active_record", '>= 4.1.0'
 
+  spec.add_development_dependency 'sqlite3'
   # spec.add_dependency 'eric_tools', '>= 0.0.7'
   # spec.add_dependency "exception_notification", '>= 4.0.1'
   # spec.add_dependency "multi_xml", '>= 0.5.5'
@@ -46,8 +49,6 @@ Gem::Specification.new do |spec|
 
   # 后来注释的
 #   spec.add_dependency "jquery-rails", '>= 3.1.4'
-#   spec.add_dependency "daemons", '1.2.3'  # delayed_job 使用的延时进程
-#   spec.add_dependency "delayed_job_active_record", '>= 4.1.0'
 #
 # # 生产条码\二维码, 以及两个依赖gem
 #   spec.add_dependency "barby", '>= 0.6.4'

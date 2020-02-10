@@ -2,6 +2,8 @@ PATH
   remote: .
   specs:
     eric_weixin (0.4.5)
+      daemons (= 1.2.3)
+      delayed_job_active_record (>= 4.1.0)
       foundation-rails (~> 6.3, >= 6.3.1.0)
       jquery-rails (>= 3.1.4)
       jquery-ui-rails (>= 5.0.5)
@@ -62,6 +64,12 @@ GEM
     builder (3.2.4)
     concurrent-ruby (1.1.5)
     crass (1.0.6)
+    daemons (1.2.3)
+    delayed_job (4.1.8)
+      activesupport (>= 3.0, < 6.1)
+    delayed_job_active_record (4.1.4)
+      activerecord (>= 3.0, < 6.1)
+      delayed_job (>= 3.0, < 5)
     domain_name (0.5.20190701)
       unf (>= 0.0.5, < 1.0.0)
     erubi (1.9.0)
@@ -151,6 +159,7 @@ GEM
       actionpack (>= 4.0)
       activesupport (>= 4.0)
       sprockets (>= 3.0.0)
+    sqlite3 (1.4.2)
     thor (1.0.1)
     thread_safe (0.3.6)
     tinymce-rails (5.1.5)
@@ -172,6 +181,7 @@ PLATFORMS
 
 DEPENDENCIES
   eric_weixin!
+  sqlite3
 
 BUNDLED WITH
    1.16.0
