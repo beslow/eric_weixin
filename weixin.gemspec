@@ -5,7 +5,7 @@ require "eric_weixin/version"
 
 # Describe your gem and declare its dependencies:
 Gem::Specification.new do |spec|
-  spec.name          = "eric_weixin"
+  spec.name          = "weixin"
   spec.version       = EricWeixin::VERSION
   spec.authors       = ["刘晓琦", "陈小朋"]
   spec.email         = ["ericliu@ikidstv.com", "549174542@qq.com"]
