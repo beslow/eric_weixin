@@ -9,6 +9,7 @@ require "tinymce-rails"
 require "eric_weixin/engine"
 
 require "eric_weixin/modules/model_treasure_chest"
+require "eric_weixin/modules/tool"
 
 require 'eric_weixin/modules/mult_customer'
 require 'eric_weixin/modules/reply_message'
