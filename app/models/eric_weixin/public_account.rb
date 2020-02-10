@@ -9,6 +9,12 @@ class EricWeixin::PublicAccount < ActiveRecord::Base
   has_many :redpacks, foreign_key: "weixin_public_account_id"
   has_many :orders, class_name: "::EricWeixin::PublicAccount", foreign_key: 'weixin_public_account_id'
 
+  after_find do
+    if EricWeixin::PublicAccount.count == 0
+      raise StandardError, "EricWeixin::PublicAccount 关联表 weixin_public_accounts需要添加一条记录，记录公众号appid和appsecret！！！"
+    end
+  end
+
   #根据微信号名称获取微信账号相关信息
   # ::EricWeixin::PublicAccount.get_public_account_by_name 'dfxt'
   def self.get_public_account_by_name name

@@ -1,5 +1,4 @@
 class EricWeixin::Cms::Weixin::ReplyMessageRulesController < EricWeixin::Cms::BaseController
-  before_action :need_login
 
   def index
     @reply_message_rules = ::EricWeixin::ReplyMessageRule.valid.paginate(page: params[:page], per_page:params[:per_page]||10)

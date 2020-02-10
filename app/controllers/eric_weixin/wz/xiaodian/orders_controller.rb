@@ -1,4 +1,4 @@
-class EricWeixin::Wz::Xiaodian::OrdersController < ApplicationController
+class EricWeixin::Wz::Xiaodian::OrdersController < EricWeixin::Cms::BaseController
   def index
     @orders = ::EricWeixin::Xiaodian::Order.all
     @orders = @orders.where("openid = ?", params[:openid]).order('order_create_time DESC') unless params[:openid].blank?

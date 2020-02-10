@@ -1,4 +1,6 @@
 EricWeixin::Engine.routes.draw do
+  root to: "cms/weixin/public_accounts#index"
+
   get "/weixin/service/:app_id" => "wz/weixin#index"
   post "/weixin/service/:app_id" => "wz/weixin#reply"
   get "/weixin/service1/ddd" => "wz/weixin#aa"

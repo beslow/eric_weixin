@@ -1,4 +1,4 @@
-class CreateWeixinCustomsServiceRecords < ActiveRecord::Migration
+class CreateWeixinCustomsServiceRecords < ActiveRecord::Migration[5.1]
   def change
       execute 'CREATE TABLE `weixin_customs_service_records` (
                 `id` int(11) NOT NULL AUTO_INCREMENT,

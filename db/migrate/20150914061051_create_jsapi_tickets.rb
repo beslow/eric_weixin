@@ -1,4 +1,4 @@
-class CreateJsapiTickets < ActiveRecord::Migration
+class CreateJsapiTickets < ActiveRecord::Migration[5.1]
   def change
     create_table :weixin_jsapi_tickets do |t|
       t.string :jsapi_ticket

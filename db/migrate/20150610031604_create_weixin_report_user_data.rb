@@ -1,4 +1,4 @@
-class CreateWeixinReportUserData < ActiveRecord::Migration
+class CreateWeixinReportUserData < ActiveRecord::Migration[5.1]
   def change
     create_table :weixin_report_user_data do |t|
       t.date :ref_date

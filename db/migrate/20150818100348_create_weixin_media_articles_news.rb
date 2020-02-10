@@ -1,4 +1,4 @@
-class CreateWeixinMediaArticlesNews < ActiveRecord::Migration
+class CreateWeixinMediaArticlesNews < ActiveRecord::Migration[5.1]
   def change
     create_table :weixin_media_articles_news do |t|
       t.integer :weixin_media_article_id

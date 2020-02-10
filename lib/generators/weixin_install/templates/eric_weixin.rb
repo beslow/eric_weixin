@@ -1,0 +1,1 @@
+WeixinController.controller_inherit_class = "::ApplicationController"

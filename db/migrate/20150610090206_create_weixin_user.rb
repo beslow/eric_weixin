@@ -1,4 +1,4 @@
-class CreateWeixinUser < ActiveRecord::Migration
+class CreateWeixinUser < ActiveRecord::Migration[5.1]
   def change
     execute 'CREATE TABLE `weixin_users` (
   `id` int(11) NOT NULL AUTO_INCREMENT,

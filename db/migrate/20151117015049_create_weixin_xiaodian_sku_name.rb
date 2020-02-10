@@ -1,4 +1,4 @@
-class CreateWeixinXiaodianSkuName < ActiveRecord::Migration
+class CreateWeixinXiaodianSkuName < ActiveRecord::Migration[5.1]
   def change
     create_table :weixin_xiaodian_sku_names do |t|
       t.string :name

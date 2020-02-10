@@ -1,4 +1,4 @@
-class CreateWeixinRedpackOrders < ActiveRecord::Migration
+class CreateWeixinRedpackOrders < ActiveRecord::Migration[5.1]
   def change
     create_table :weixin_redpack_orders do |t|
       t.integer :weixin_public_account_id

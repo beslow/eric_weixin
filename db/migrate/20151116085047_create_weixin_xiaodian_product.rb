@@ -1,4 +1,4 @@
-class CreateWeixinXiaodianProduct < ActiveRecord::Migration
+class CreateWeixinXiaodianProduct < ActiveRecord::Migration[5.1]
   def change
     create_table :weixin_xiaodian_products do |t|
       t.string :product_id, :limit => 100

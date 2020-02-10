@@ -1,4 +1,4 @@
-class CreateWeixinXiaodianProductSkuDetail < ActiveRecord::Migration
+class CreateWeixinXiaodianProductSkuDetail < ActiveRecord::Migration[5.1]
   def change
     create_table :weixin_xiaodian_product_sku_details do |t|
       t.integer :weixin_xiaodian_product_id

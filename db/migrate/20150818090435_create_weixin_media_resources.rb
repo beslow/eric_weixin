@@ -1,4 +1,4 @@
-class CreateWeixinMediaResources < ActiveRecord::Migration
+class CreateWeixinMediaResources < ActiveRecord::Migration[5.1]
   def change
     create_table :weixin_media_resources do |t|
       t.string :tags

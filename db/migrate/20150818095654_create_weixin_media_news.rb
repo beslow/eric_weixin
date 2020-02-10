@@ -1,4 +1,4 @@
-class CreateWeixinMediaNews < ActiveRecord::Migration
+class CreateWeixinMediaNews < ActiveRecord::Migration[5.1]
   def change
     create_table :weixin_media_news do |t|
       t.datetime :planned_send_time

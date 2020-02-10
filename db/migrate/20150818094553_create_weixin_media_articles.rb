@@ -1,4 +1,4 @@
-class CreateWeixinMediaArticles < ActiveRecord::Migration
+class CreateWeixinMediaArticles < ActiveRecord::Migration[5.1]
   def change
     create_table :weixin_media_articles do |t|
       t.string :thumb_media_id

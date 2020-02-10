@@ -1,4 +1,4 @@
-class CreateWeixinXiaodianSkuValue < ActiveRecord::Migration
+class CreateWeixinXiaodianSkuValue < ActiveRecord::Migration[5.1]
   def change
     create_table :weixin_xiaodian_sku_values do |t|
       t.integer :weixin_xiaodian_sku_name_id
