@@ -1,4 +1,4 @@
-class EricWeixin::Cms::BaseController < BaseController
+class EricWeixin::Cms::BaseController < ::ApplicationController
   # before_filter :need_login
   # around_filter :round
   #
