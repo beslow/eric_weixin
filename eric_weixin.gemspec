@@ -7,8 +7,8 @@ require "eric_weixin/version"
 Gem::Specification.new do |spec|
   spec.name          = "eric_weixin"
   spec.version       = EricWeixin::VERSION
-  spec.authors       = ["刘晓琦"]
-  spec.email         = ["ericliu@ikidstv.com"]
+  spec.authors       = ["刘晓琦", "陈小朋"]
+  spec.email         = ["ericliu@ikidstv.com", "549174542@qq.com"]
   spec.summary       = %q{微信插件}
   spec.description   = %q{快速开发微信公众账号}
   spec.homepage      = ""
@@ -24,9 +24,11 @@ Gem::Specification.new do |spec|
   spec.add_dependency 'foundation-rails', '~> 6.3', '>= 6.3.1.0'
   #
   spec.add_dependency "jquery-ui-rails", '>= 5.0.5'
+  spec.add_dependency "jquery-rails", '>= 3.1.4'
   spec.add_dependency "rest-client", '1.8.0'
   spec.add_dependency "tinymce-rails", '>= 4.1.3'
   spec.add_dependency "will_paginate-foundation", '>= 6.2.0'
+
   # spec.add_dependency 'eric_tools', '>= 0.0.7'
   # spec.add_dependency "exception_notification", '>= 4.0.1'
   # spec.add_dependency "multi_xml", '>= 0.5.5'

@@ -296,7 +296,8 @@ class EricWeixin::ReplyMessageRule < ActiveRecord::Base
                                                                                         FromUserName: receive_message[:ToUserName],
                                                                                         news: weixin_news.weixin_articles
                         when "wx_function"
-                          ::Weixin::WeixinAutoReplyFunctions.send(reply_message_rule.reply_message, ({:key_word => wx_key_word, :receive_message => receive_message}))
+                          m = Weixin::WeixinAutoReplyFunctions.respond_to?(reply_message_rule.reply_message.to_sym) ? reply_message_rule.reply_message : 'default_method'
+                          ::Weixin::WeixinAutoReplyFunctions.send(m, ({:key_word => wx_key_word, :receive_message => receive_message}))
                       end
                     end
                   end
