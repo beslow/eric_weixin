@@ -6,6 +6,8 @@ require "jquery-rails"
 require "jquery-ui-rails"
 require "rest-client"
 require "tinymce-rails"
+require "daemons"
+require "delayed_job_active_record"
 require "eric_weixin/engine"
 
 require "eric_weixin/modules/model_treasure_chest"
