@@ -93,7 +93,9 @@
     <td><%= case user.sex when 1 then '男' when 2 then '女' else '未知' end %></td>
     <!--<td><%#= case user.language when 'zh_CN' then '简体中文' when 'zh_TW' then '繁体中文' when 'en' then '英文' else '其它' end %></td>-->
     <td><%= user.country %> <br><%= user.province %> <br><%= user.city %></td>
-    <td><%= image_tag(user.headimgurl, height: '32', width: '32') %></td>
+    <td>
+      <%= image_tag(user.headimgurl, height: '32', width: '32') if user.headimgurl %>
+    </td>
     <td><%= Time.at(user.subscribe_time.to_i).strftime('%Y-%m-%d %H:%M') %></td>
     <td id="user_remark_<%= user.id %>"><%= user.remark %></td>
     <td><%= user.translate_register_channel "last_register_channel" %></td>
