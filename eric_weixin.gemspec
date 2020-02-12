@@ -25,7 +25,7 @@ Gem::Specification.new do |spec|
   #
   spec.add_dependency "jquery-ui-rails", '>= 5.0.5'
   spec.add_dependency "jquery-rails", '>= 3.1.4'
-  spec.add_dependency "rest-client", '1.8.0'
+  spec.add_dependency "rest-client", '>=1.8.0'
   spec.add_dependency "tinymce-rails", '>= 4.1.3'
   spec.add_dependency "will_paginate-foundation", '>= 6.2.0'
   spec.add_dependency "daemons", '1.2.3'  # delayed_job 使用的延时进程
