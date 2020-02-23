@@ -1,6 +1,6 @@
 class EricWeixin::Xiaodian::Category < ActiveRecord::Base
   self.table_name = 'weixin_xiaodian_categories'
-  belongs_to :parent, class_name: EricWeixin::Xiaodian::Category, foreign_key: :parent_id
+  belongs_to :parent, class_name: 'EricWeixin::Xiaodian::Category', foreign_key: :parent_id
   has_and_belongs_to_many :products, :class_name => 'EricWeixin::Xiaodian::Product', :join_table => "weixin_xiaodian_category_products", :foreign_key => :weixin_xiaodian_category_id
 
   validates_uniqueness_of :wx_category_id
